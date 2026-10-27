@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muistipeli</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+        <!-- Vasemmassa laidassa leaderboard -->
+        <aside class="leaderboard-panel">
+            <h2>🏆</h2>
+            <h2>Hall of Fame</h2>
+            <ol id="high-scores-list">
+                <!-- JS täyttää tän -->
+            </ol>
+        </aside>
+
+        <!-- Oikeassa laidas peli -->
+        <main class="game-container">
+            <h1>TIK-muistipeli</h1>
+            
+            <div id="start-screen" class="screen">
+                <p>Kirjaa nimesi ja aloita peli!</p>
+                <input type="text" id="player-name-input" placeholder="Nimimerkki" maxlength="15">
+                <button id="start-game-btn">Pelaa</button>
+            </div>
+
+            <!-- pelivaihee html -->
+            <div id="game-screen" class="screen" style="display:none;">
+                <p>Pelaaja: <span id="current-player-name"></span> | Aika: <span id="timer">0</span>s</p>
+                <div class="grid" id="game-grid"></div>
+                
+                <div class="button-container">
+                    <button id="restart-btn" style="display:none;">Pelaa uudelleen</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <img id="cursor-mascot" src="kuvat/moko.png" alt="Maskotti">
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(kuvat/tausta.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1050px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.leaderboard-panel {
+    background-color: #222f3e;
+    padding: 25px;
+    border-radius: 16px;
+    width: 250px;
+    flex: 0 0 250px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55),
+                0 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.leaderboard-panel h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    margin-top: 0;
+    color: #d47e1b;
+    text-align: center;
+}
+
+#high-scores-list {
+    padding-left: 25px;
+    margin-top: 1em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 2;
+}
+
+#high-scores-list li {
+    padding: 0;
+    padding-right: 0;
+}
+
+#high-scores-list li:not(.empty-score) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 52px;
+    column-gap: 6px;
+    align-items: baseline;
+}
+
+.score-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.score-time {
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.game-container {
+    flex: 1;
+    min-width: 0;
+    height: 700px;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    background-color: #222f3e;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    box-shadow: 0 15px 35px rgba(2, 2, 2, 0.55),
+                0 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #1e293b;
+    color: #ffffff;
+    height: 105px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+.card:hover {
+    filter: brightness(2.2);
+}
+
+/* Kun kortti on avattu */
+.card.flipped {
+    border: 2px solid #ffffff;
+}
+
+/* Löydetyt parit */
+.card.matched {
+    cursor: default;
+    opacity: 0.75;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    background-color: #1e293b;
+    color: white;
+    margin-right: 10px;
+    width: 55%;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: #d47e1b;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #ccc6c0;
+    color: rgb(10, 10, 10);
+    border-color: #d47e1b;
+    border-radius: 8px;
+    border-width: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 168, 150, 0.4);
+}
+
+button:hover {
+    background-color: #d47e1b;
+}
+
+.button-container {
+    margin-top: 30px;
+}
+
+#cursor-mascot {
+    position: fixed;
+    width: 45px;
+    height: auto;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(12px, 12px);
+}
