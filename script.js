@@ -268,7 +268,7 @@ restartBtn.addEventListener('click', () => {
 });
 
 // Devin salasana
-const ADMIN_PASSWORD = 'ValiaikainenSalasana';
+const ADMIN_PASSWORD = 'Tyhjenna';
 // leaderboard tyhjennys: Ctrl + Shift + L
 document.addEventListener('keydown', event => {
     if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'l') {
@@ -286,7 +286,7 @@ document.addEventListener('keydown', event => {
                 alert('Tulostaulukko on tyhjennetty.');
             }
         } else {
-            alert('Väärä salasana.');
+            alert('Väärä salasana');
         }
     }
 });
