@@ -268,26 +268,32 @@ restartBtn.addEventListener('click', () => {
 });
 
 // Devin salasana
-const ADMIN_PASSWORD = 'Tyhjenna';
+const ADMIN_PASSWORD = 'ValiaikainenSalasana';
+
 // leaderboard tyhjennys: Ctrl + Shift + L
 document.addEventListener('keydown', event => {
-    if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'l') {
-        event.preventDefault();
+    const isShortcut =
+        event.ctrlKey &&
+        event.shiftKey &&
+        (event.key.toLowerCase() === 'l' || event.code === 'KeyL');
 
-        const password = prompt('Anna ylläpitosalasana:');
+    if (!isShortcut) return;
 
-        if (password === null) return;
+    event.preventDefault();
 
-        if (password === ADMIN_PASSWORD) {
-            if (confirm('Tyhjennetäänkö kaikki Hall of Fame -tulokset?')) {
-                highScores = [];
-                localStorage.removeItem('tikoMemoryHighScores');
-                updateLeaderboardUI();
-                alert('Tulostaulukko on tyhjennetty.');
-            }
-        } else {
-            alert('Väärä salasana');
+    const password = prompt('Anna ylläpitosalasana:');
+
+    if (password === null) return;
+
+    if (password === ADMIN_PASSWORD) {
+        if (confirm('Tyhjennetäänkö kaikki Hall of Fame -tulokset?')) {
+            highScores = [];
+            localStorage.removeItem('tikoMemoryHighScores');
+            updateLeaderboardUI();
+            alert('Tulostaulukko on tyhjennetty.');
         }
+    } else {
+        alert('Väärä salasana.');
     }
 });
 
